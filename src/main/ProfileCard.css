@@ -1,0 +1,30 @@
+/* ProfileCard.css */
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0;
+  }
+  
+  .profile-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-info p {
+    margin: 0;
+    font-size: 16px;
+  }
+  

@@ -1,0 +1,127 @@
+/* Common Styles */
+.chat-area {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.message-container {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  max-width: 70%;
+  position: relative;
+}
+
+.message.sent {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+}
+
+.message.received {
+  background-color: #fff;
+  align-self: flex-start;
+}
+
+.message-time {
+  font-size: 12px;
+  color: #888888;
+}
+
+.message.sent .message-time {
+  align-self: flex-end;
+}
+
+.message.received .message-time {
+  align-self: flex-start;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+/* Default textarea style */
+.chat-input textarea {
+  flex: 1;
+  min-height: 40px;
+  max-height: 100px;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 14px;
+  resize: none; /* Prevent manual resizing */
+  overflow: hidden; /* Hide scrollbars */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  color: #333; /* Default text color */
+  background-color: #fff; /* Default background color */
+}
+
+.chat-input button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #0056b3;
+}
+
+.select-to-chat {
+  padding: 20px;
+  text-align: center;
+  color: #999;
+}
+
+/* Light Theme */
+.light-theme .chat-area {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.light-theme .message.sent {
+  background-color: #dcf8c6;
+}
+
+.light-theme .message.received {
+  background-color: #fff;
+}
+
+/* Dark Theme */
+.dark-theme .chat-area {
+  background-color: #181818;
+  color: #ddd;
+}
+
+.dark-theme .chat-input textarea {
+  color: #ddd; /* Text color in dark mode */
+  background-color: #333; /* Background color in dark mode */
+}
+
+.dark-theme .message.sent {
+  background-color: rgb(41, 47, 44);
+}
+
+.dark-theme .message.received {
+  background-color: #444;
+}

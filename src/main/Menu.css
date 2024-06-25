@@ -1,0 +1,187 @@
+/* Menu.css */
+
+/* Common Styles */
+.menu-container {
+  display: flex;
+  height: 100vh;
+}
+
+.select-to-chat {
+  text-align: center;
+  margin-top: 20px; /* Adjust margin as needed */
+  color: #666; /* Optional: Adjust color */
+}
+
+.menu-left {
+  width: 30%;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-right {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  justify-content: space-between;
+}
+
+.menu-avatar img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.menu-title {
+  display: flex;
+  align-items: center;
+}
+
+.menu-title h1 {
+  margin: 0 10px;
+}
+
+.back-button {
+  display: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.contact-list,
+.chat-area {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.contact-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-item:hover {
+  background-color: #f0f0f0;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+}
+
+.chat-header img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-header h2 {
+  margin: 0;
+}
+
+.select-to-chat {
+  text-align: center;
+  margin: 20px;
+}
+
+.search-bar {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: calc(100% - 40px); /* Adjust based on padding/margin */
+}
+
+.menu-footer {
+  margin-top: auto;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background-color: inherit;
+  text-align: center;
+}
+
+/* Light Theme */
+.light-theme {
+  background-color: #fff;
+  color: #000;
+}
+
+.light-theme .menu-left {
+  background-color: #f9f9f9;
+}
+
+.light-theme .menu-right {
+  background-color: #fff;
+}
+
+.light-theme .menu-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.light-theme .contact-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-theme .menu-left {
+  background-color: #040404;
+}
+
+.dark-theme .menu-right {
+  background-color: #2a2828;
+}
+
+.dark-theme .menu-header {
+  background-color: #1b1a1a;
+  border-bottom: 1px solid #201f1f;
+}
+
+.dark-theme .contact-item:hover {
+  background-color: #5b5757;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 575.98px) {
+  .menu-left,
+  .menu-right {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .back-button {
+    display: block;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .menu-left,
+  .menu-right {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .back-button {
+    display: block;
+  }
+}
