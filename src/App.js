@@ -17,6 +17,7 @@ export default function App() {
     localStorage.setItem('isUserLoggedIn', 'true');
     setIsUserLoggedIn(true);
   };
+  // localStorage.removeItem("selectedContact");
 
   return (
     <div>

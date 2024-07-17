@@ -3,6 +3,8 @@ import axios from 'axios';
 import './ChatArea.css';
 import config from './../config';
 
+import SendIcon from '@mui/icons-material/Send';
+
 const ChatArea = ({ selectedContact }) => {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
@@ -19,10 +21,12 @@ const ChatArea = ({ selectedContact }) => {
   }, []);
 
   useEffect(() => {
-    if (userData && selectedContact) {
-      networkcheck();
+    if (selectedContact) {
+      setMessages([]); // Clear messages when a new contact is selected
+      scrollToBottom(); // Scroll to bottom after clearing messages
+      networkcheck(); // Check or create network connection
     }
-  }, [userData, selectedContact]);
+  }, [selectedContact]);
 
   const networkcheck = async () => {
     try {
@@ -47,14 +51,11 @@ const ChatArea = ({ selectedContact }) => {
   };
 
   useEffect(() => {
-    // Clear messages when selectedContact changes
-    setMessages([]);
-  }, [selectedContact]);
-
-  useEffect(() => {
-    fetchMessages(); // Initial fetch when component mounts
-    const interval = setInterval(fetchMessages, 1000); // Fetch messages every second
-    return () => clearInterval(interval); // Cleanup on unmount
+    if (networkId) {
+      fetchMessages();
+      const interval = setInterval(fetchMessages, 1000); // Fetch messages every second
+      return () => clearInterval(interval); // Cleanup on unmount
+    }
   }, [networkId]);
 
   const fetchMessages = async () => {
@@ -85,7 +86,8 @@ const ChatArea = ({ selectedContact }) => {
         msg: message
       });
       setMessage('');
-      fetchMessages(); // Fetch messages again after sending new message
+      await fetchMessages(); // Fetch messages again after sending new message
+      scrollToBottom(); // Scroll to bottom after sending message
     } catch (error) {
       console.error('Error sending message', error);
     }
@@ -106,7 +108,6 @@ const ChatArea = ({ selectedContact }) => {
               <div
                 key={msg._id}
                 className={`message ${msg.sender === userData.username ? 'sent' : 'received'} ${msg.read ? 'read' : 'unread'}`}
-                // Assuming onClick marks message as read
               >
                 <div className="message-content">{msg.msg}</div>
                 <div className="message-time">{msg.msgtime}</div>
@@ -119,7 +120,7 @@ const ChatArea = ({ selectedContact }) => {
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Type a message"
             />
-            <button onClick={sendMessage}>Send</button>
+            <button onClick={sendMessage}><SendIcon/></button>
           </div>
         </>
       ) : (

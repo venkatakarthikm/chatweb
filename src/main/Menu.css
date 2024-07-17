@@ -1,5 +1,3 @@
-/* Menu.css */
-
 /* Common Styles */
 .menu-container {
   display: flex;
@@ -106,13 +104,57 @@
   padding: 10px;
   border-top: 1px solid #ccc;
   background-color: inherit;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.placeholder-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.logout-button {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 /* Light Theme */
 .light-theme {
   background-color: #fff;
   color: #000;
+}
+
+.back-button.light-theme {
+  color: #1b1a1a;
 }
 
 .light-theme .menu-left {
@@ -136,6 +178,10 @@
 .dark-theme {
   background-color: #333;
   color: #fff;
+}
+
+.back-button.dark-theme {
+  color: white;
 }
 
 .dark-theme .menu-left {
